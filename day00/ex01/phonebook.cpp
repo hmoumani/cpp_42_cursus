@@ -57,7 +57,6 @@ void show_trun_contact(Contact list[], int list_len)
 
 void	add_contact(Contact list[], int list_len)
 {
-	std::cout << list_len;
 	list[list_len].add();
 }
 
