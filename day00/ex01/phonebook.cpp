@@ -21,6 +21,24 @@ void show_menu(void)
 	std::cout << "EXIT:" << std::endl;
 }
 
+std::string get_input()
+{
+	std::string input;
+	
+	while (1) {
+	    std::getline(std::cin, input);
+        if (std::cin.eof())
+        {
+            std::cout << "Bye!" << std::endl;
+            exit(0);
+        }
+        if (!input.empty())
+            break;
+        std::cin.clear();
+    }
+    return (input);
+}
+
 std::string str_output(std::string str)
 {
 	int len = str.length();
@@ -66,13 +84,13 @@ int		get_int(int list_len)
     std::string input = "";
 
  	while (true) {
-		std::cout << "Please enter a valid number: ";
+		std::cout << "Please enter a valid ID: ";
 		std::getline(std::cin, input);
 		std::stringstream myStream(input);
 		if (myStream >> my_number)
 			if (my_number >= 0 && my_number < list_len)
 				break;
-		std::cout << "Invalid number, please try again" << std::endl;
+		std::cout << "Invalid ID, please try again" << std::endl;
  	}
  	return my_number;
 }

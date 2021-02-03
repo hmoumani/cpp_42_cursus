@@ -33,5 +33,6 @@ public:
 	void to_string();
 	~Contact(void);
 };
+std::string get_input();
 
 #endif

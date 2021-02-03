@@ -23,27 +23,27 @@ Contact::~Contact(void)
 void    Contact::add(void)
 {
     std::cout << "First Name: ";
-    getline(std::cin, this->first_name);
+    this->first_name = get_input();
     std::cout << "Last Name: ";
-    getline(std::cin, this->last_name);
+    this->last_name = get_input();
     std::cout << "nickname: ";
-    getline(std::cin, this->nick_name);
+    this->nick_name = get_input();
     std::cout << "login: ";
-    getline(std::cin, this->login);
+    this->login = get_input();
     std::cout << "postal address: ";
-    getline(std::cin, this->postal_address);
+    this->postal_address = get_input();
     std::cout << "email address: ";
-    getline(std::cin, this->email_address);
+    this->email_address = get_input();
     std::cout << "phone number: ";
-    getline(std::cin, this->phone_number);
+    this->phone_number = get_input();
     std::cout << "birthday date: ";
-    getline(std::cin, this->birthday_date);
+    this->birthday_date = get_input();
     std::cout << "favorite meal: ";
-    getline(std::cin, this->favorite_meal);
+    this->favorite_meal = get_input();
     std::cout << "underwear color: ";
-    getline(std::cin, this->underwear_color);
+    this->underwear_color = get_input();
     std::cout << "darkest secret: ";
-    getline(std::cin, this->darkest_secret);
+    this->darkest_secret = get_input();
     return ;
 }
 
