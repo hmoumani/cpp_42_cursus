@@ -24,7 +24,7 @@ void show_menu(void)
 std::string get_input()
 {
 	std::string input;
-	
+
 	while (1) {
 	    std::getline(std::cin, input);
         if (std::cin.eof())
@@ -111,7 +111,7 @@ int main()
 	while (1)
 	{
 		show_menu();
-		getline(std::cin, choice);
+		choice = get_input();
 		if (choice == "ADD")
 		{
 			if (list_len == 8)
