@@ -90,6 +90,11 @@ int		get_int(int list_len)
 		if (myStream >> my_number)
 			if (my_number >= 0 && my_number < list_len)
 				break;
+		if (std::cin.eof())
+        {
+            std::cout << "Bye!" << std::endl;
+            exit(0);
+        }
 		std::cout << "Invalid ID, please try again" << std::endl;
  	}
  	return my_number;
