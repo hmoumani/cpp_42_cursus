@@ -10,4 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HORDE
+# define ZOMBIE_HORDE
 
+class ZombieHorde
+{
+    
+};
+
+#endif
