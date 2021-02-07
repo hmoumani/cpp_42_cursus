@@ -31,3 +31,20 @@ void Zombie::announce() const
 {
     std::cout << "<" << this->_name << " (" << this->_type << ")> give me some Braiiiiiiinnnssss... " << std::endl;
 };
+
+std::string	Zombie::get_type() const
+{
+    return this->_type;
+}
+std::string	Zombie::get_name() const
+{
+    return this->_name;
+}
+void		Zombie::set_type(std::string type)
+{
+    this->_type = type;
+}
+void		Zombie::set_name(std::string name)
+{
+    this->_name = name;
+}

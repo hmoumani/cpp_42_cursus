@@ -12,10 +12,20 @@
 
 #ifndef ZOMBIE_HORDE
 # define ZOMBIE_HORDE
+# include <iostream>
+# include "Zombie.hpp"
 
 class ZombieHorde
 {
-    
+    private:
+        int		_number_zombie;
+		Zombie	*_zombies;
+    public:
+        ZombieHorde();
+        ZombieHorde(int number_zombie);
+        ZombieHorde(int number_zombie, std::string type);
+        ~ZombieHorde();
+		void	announce();
 };
 
 #endif

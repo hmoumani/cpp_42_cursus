@@ -43,7 +43,7 @@ void    ZombieEvent::randomChump() const
     std::string str = "AAAAAA";
   	for (int i = 0; i < 6; i++)
     {
-        str[i] = rand() % 26 + 64;
+        str[i] = std::rand() % 26 + 64;
     }
 	Zombie z = Zombie(str, this->_zombie_type);
     z.announce();
