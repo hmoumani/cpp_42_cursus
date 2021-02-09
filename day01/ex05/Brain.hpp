@@ -25,7 +25,7 @@ class Brain
         Brain(int _size);
         ~Brain();
         std::string identify() const;
-
+        int         get_size() const;
 };
 
 #endif
