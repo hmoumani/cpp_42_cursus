@@ -10,4 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "FragTrap.hpp"
 
+int main()
+{
+	FragTrap frag("dump_robot");
+
+	frag.rangedAttack("houssam");
+	frag.meleeAttack("houssam");
+	frag.takeDamage(50);
+	frag.beRepaired(20);
+	frag.vaulthunter_dot_exe("houssam");
+	frag.vaulthunter_dot_exe("houssam");
+	frag.vaulthunter_dot_exe("houssam");
+	frag.vaulthunter_dot_exe("houssam");
+	frag.vaulthunter_dot_exe("houssam");
+}
