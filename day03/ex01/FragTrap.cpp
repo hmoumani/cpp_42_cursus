@@ -30,15 +30,14 @@ void    FragTrap::takeDamage(unsigned int amount)
     _hit_point -= amount - (amount * _armor_damage / 100);
     if (_hit_point < 0)
         _hit_point = 0;
-    std::cout << _hit_point << std::endl;
 }
 
 void    FragTrap::beRepaired(unsigned int amount)
 {
     std::cout << "Good as new, I think. Am I leaking?" << std::endl;
     _hit_point += amount;
-    if (_hit_point > 100)
-        _hit_point = 100;
+    if (_hit_point > _max_hit_point)
+        _hit_point = _max_hit_point;
 }
 
 FragTrap::FragTrap() : _hit_point(100), _max_hit_point(100),
@@ -94,7 +93,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
     }
     else
     {
-        std::cout << "let me get some Fuu**ing rest" << std::endl;
+        std::cout << "let me get some F**king(freaking) rest" << std::endl;
         std::cout << "low energy: " << _energy_points << "%" << std::endl;
     }
 }
