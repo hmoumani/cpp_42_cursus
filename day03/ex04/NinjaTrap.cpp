@@ -78,10 +78,10 @@ std::string NinjaTrap::getName() const
 
 void    FragTrap::rangedAttack(std::string const & target)
 {
-    std::cout << "NINJA-TP " << _name << " attacks " << target << " at range, causing " << _ranged_attack_damage << " points of damage!" << std::endl;
+    std::cout << "Ninja-TP " << _name << " attacks " << target << " at range, causing " << _ranged_attack_damage << " points of damage!" << std::endl;
 }
 
 void    FragTrap::meleeAttack(std::string const & target)
 {
-    std::cout << "NINJA-TP " << _name << " attacks " << target << " with melee, causing " << _melee_damage << " points of damage!" << std::endl;
+    std::cout << "Ninja-TP " << _name << " attacks " << target << " with melee, causing " << _melee_damage << " points of damage!" << std::endl;
 }

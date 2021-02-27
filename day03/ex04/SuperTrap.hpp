@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoumani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/27 10:37:54 by hmoumani          #+#    #+#             */
-/*   Updated: 2021/02/27 10:37:55 by hmoumani         ###   ########.fr       */
+/*   Created: 2021/02/27 12:02:20 by hmoumani          #+#    #+#             */
+/*   Updated: 2021/02/27 12:02:21 by hmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-# define NINJATRAP_HPP
-# include "ClapTrap.hpp"
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
 # include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+# include "NinjaTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
-    public:
-    NinjaTrap(void);
-    NinjaTrap(std::string const & name);
-    NinjaTrap(NinjaTrap const & src);
-    ~NinjaTrap();
-    NinjaTrap    &operator=(NinjaTrap const & src);
+    SuperTrap();
+    ~SuperTrap();
+    SuperTrap(std::string const & name);
+    SuperTrap(SuperTrap const & src);
     void         rangedAttack(std::string const & target);
     void         meleeAttack(std::string const & target);
-    void         ninjaShoebox(ClapTrap const &trap);
-    void         ninjaShoebox(ScavTrap const &trap);
-    void         ninjaShoebox(FragTrap const &trap);
-    void         ninjaShoebox(NinjaTrap const &trap);
-    std::string getName() const ;
+    SuperTrap&      operator=(SuperTrap const & src);
 };
 
 #endif
