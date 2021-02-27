@@ -26,33 +26,13 @@ void    ScavTrap::meleeAttack(std::string const & target)
     std::cout << "Scav Trap " << _name << " attacks " << target << " with melee, causing " << _melee_damage << " points of damage!" << std::endl;
 }
 
-void    ScavTrap::takeDamage(unsigned int amount)
-{
-    std::cout << "My assets... frozen!" << std::endl;
-    _hit_point -= amount - (amount * _armor_damage / 100);
-    if (_hit_point < 0)
-        _hit_point = 0;
-}
-
-void    ScavTrap::beRepaired(unsigned int amount)
-{
-    std::cout << "Sweet life juice!" << std::endl;
-    _hit_point += amount;
-    if (_hit_point > _max_hit_point)
-        _hit_point = _max_hit_point;
-}
-
-ScavTrap::ScavTrap() : _hit_point(100), _max_hit_point(100),
-_energy_points(50), _max_energy_points(50), _level(1), _name("default"), _melee_damage(20), 
-_ranged_attack_damage(15), _armor_damage(3)
+ScavTrap::ScavTrap() : ClapTrap(100, 100, 50, 50, 1, "default", 20, 15, 3)
 {
     srand((unsigned int)time(NULL));
     std::cout << "Look out everybody! Things are about to get awesome!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const & name) : _hit_point(100), _max_hit_point(100),
-_energy_points(50), _max_energy_points(50), _level(1), _name(name), _melee_damage(20), 
-_ranged_attack_damage(15), _armor_damage(3)
+ScavTrap::ScavTrap(std::string const & name) : ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
 {
     srand((unsigned int)time(NULL));
     std::cout << "Look out everybody! Things are about to get awesome!" << std::endl;
@@ -89,6 +69,5 @@ void    ScavTrap::challengeNewcomer(std::string const & target)
 {
 
     std::cout << "ScavTrap <" << _name << "> attacks " << target << " using challengeNewcomer " <<  attacks[rand() % 3] << std::endl;
-    std::cout << _energy_points << "% remains" << std::endl;
 
 }

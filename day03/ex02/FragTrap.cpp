@@ -24,33 +24,13 @@ void    FragTrap::meleeAttack(std::string const & target)
     std::cout << "FR4G-TP " << _name << " attacks " << target << " with melee, causing " << _melee_damage << " points of damage!" << std::endl;
 }
 
-void    FragTrap::takeDamage(unsigned int amount)
-{
-    std::cout << "Oh my God, I'm leaking! I think I'm leaking! Ahhhh, I'm leaking! There's oil everywhere!" << std::endl;
-    _hit_point -= amount - (amount * _armor_damage / 100);
-    if (_hit_point < 0)
-        _hit_point = 0;
-}
-
-void    FragTrap::beRepaired(unsigned int amount)
-{
-    std::cout << "Good as new, I think. Am I leaking?" << std::endl;
-    _hit_point += amount;
-    if (_hit_point > _max_hit_point)
-        _hit_point = _max_hit_point;
-}
-
-FragTrap::FragTrap() : _hit_point(100), _max_hit_point(100),
-_energy_points(100), _max_energy_points(100), _level(1), _name("default"), _melee_damage(30), 
-_ranged_attack_damage(20), _armor_damage(5)
+FragTrap::FragTrap() : ClapTrap(100, 100, 100, 100, 1, "default", 30, 20, 5)
 {
     srand((unsigned int)time(NULL));
     std::cout << "I am the best robot. Yeah, yeah, yeah, I am the best robot. Ooh, ooh, here we go!" << std::endl;
 }
 
-FragTrap::FragTrap(std::string const & name) : _hit_point(100), _max_hit_point(100),
-_energy_points(100), _max_energy_points(100), _level(1), _name(name), _melee_damage(30), 
-_ranged_attack_damage(20), _armor_damage(5)
+FragTrap::FragTrap(std::string const & name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
     srand((unsigned int)time(NULL));
     std::cout << "I am the best robot. Yeah, yeah, yeah, I am the best robot. Ooh, ooh, here we go!" << std::endl;
