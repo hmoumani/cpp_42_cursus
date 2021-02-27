@@ -34,6 +34,7 @@ class ClapTrap
         ~ClapTrap();
         void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+        ClapTrap    &operator=(ClapTrap const & src);
 };
 
 #endif

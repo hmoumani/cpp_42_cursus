@@ -34,7 +34,7 @@ void    SuperTrap::rangedAttack(std::string const & target)
 
 void    SuperTrap::meleeAttack(std::string const & target)
 {
-    FragTrap::meleeAttack(target);
+    NinjaTrap::meleeAttack(target);
 }
 
 SuperTrap    &SuperTrap::operator=(SuperTrap const & src)

@@ -19,18 +19,18 @@
 class NinjaTrap : public ClapTrap
 {
     public:
-    NinjaTrap(void);
-    NinjaTrap(std::string const & name);
-    NinjaTrap(NinjaTrap const & src);
-    ~NinjaTrap();
-    NinjaTrap    &operator=(NinjaTrap const & src);
-    void         rangedAttack(std::string const & target);
-    void         meleeAttack(std::string const & target);
-    void         ninjaShoebox(ClapTrap const &trap);
-    void         ninjaShoebox(ScavTrap const &trap);
-    void         ninjaShoebox(FragTrap const &trap);
-    void         ninjaShoebox(NinjaTrap const &trap);
-    std::string getName() const ;
+        NinjaTrap(void);
+        NinjaTrap(std::string const & name);
+        NinjaTrap(NinjaTrap const & src);
+        ~NinjaTrap();
+        NinjaTrap    &operator=(NinjaTrap const & src);
+        void         rangedAttack(std::string const & target);
+        void         meleeAttack(std::string const & target);
+        void         ninjaShoebox(ClapTrap const &trap);
+        void         ninjaShoebox(ScavTrap const &trap);
+        void         ninjaShoebox(FragTrap const &trap);
+        void         ninjaShoebox(NinjaTrap const &trap);
+        std::string getName() const ;
 };
 
 #endif

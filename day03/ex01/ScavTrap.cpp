@@ -89,6 +89,4 @@ void    ScavTrap::challengeNewcomer(std::string const & target)
 {
 
     std::cout << "ScavTrap <" << _name << "> attacks " << target << " using challengeNewcomer " <<  attacks[rand() % 3] << std::endl;
-    std::cout << _energy_points << "% remains" << std::endl;
-
 }

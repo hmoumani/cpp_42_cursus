@@ -35,6 +35,7 @@ class ClapTrap
         void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
         std::string getName() const ;
+        ClapTrap    &operator=(ClapTrap const & src);
 };
 
 #endif

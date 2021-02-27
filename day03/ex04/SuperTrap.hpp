@@ -17,6 +17,7 @@
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {
+    public:
     SuperTrap();
     ~SuperTrap();
     SuperTrap(std::string const & name);

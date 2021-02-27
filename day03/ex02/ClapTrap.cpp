@@ -25,7 +25,13 @@ void    ClapTrap::beRepaired(unsigned int amount)
     std::cout << "Sweet life juice!" << std::endl;
     _hit_point += amount;
     if (_hit_point > _max_hit_point)
+    {
+        amount = _hit_point - _max_hit_point;
         _hit_point = _max_hit_point;
+        _energy_points += amount;
+        if (_energy_points > _max_energy_points)
+            _energy_points = _max_energy_points;
+    }
 }
 
 ClapTrap::ClapTrap() : _hit_point(100), _max_hit_point(100),
@@ -56,4 +62,19 @@ ClapTrap::ClapTrap(ClapTrap const & src)
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap destructor" << std::endl;
+}
+
+ClapTrap    &ClapTrap::operator=(ClapTrap const & src)
+{
+    _hit_point = src._hit_point;
+    _max_hit_point = src._max_hit_point;
+    _energy_points = src._energy_points;
+    _max_energy_points = src._max_energy_points;
+    _level = src._level;
+    _name = src._name;
+    _melee_damage = src._melee_damage;
+    _ranged_attack_damage = src._ranged_attack_damage;
+    _armor_damage = src._armor_damage;
+    std::cout << "copie from Clap Trap created" << std::endl;
+    return *this;
 }

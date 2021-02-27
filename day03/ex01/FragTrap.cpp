@@ -37,7 +37,13 @@ void    FragTrap::beRepaired(unsigned int amount)
     std::cout << "Good as new, I think. Am I leaking?" << std::endl;
     _hit_point += amount;
     if (_hit_point > _max_hit_point)
+    {
+        amount = _hit_point - _max_hit_point;
         _hit_point = _max_hit_point;
+        _energy_points += amount;
+        if (_energy_points > _max_energy_points)
+            _energy_points = _max_energy_points;
+    }
 }
 
 FragTrap::FragTrap() : _hit_point(100), _max_hit_point(100),

@@ -14,6 +14,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main()
 {
@@ -61,6 +62,24 @@ int main()
 		ninja.ninjaShoebox(clap);
 		ninja.ninjaShoebox(frag);
 		ninja.ninjaShoebox(scav);
+
+
+		NinjaTrap temp = ninja;
+	}
+	std::cout << std::endl << "**************************************" << std::endl << std::endl;
+	{
+		SuperTrap super_t("sudo");
+		NinjaTrap ninja("naruto");
+		ClapTrap clap = ClapTrap();
+		FragTrap frag("frag");
+		ScavTrap scav("scav");
+
+		super_t.takeDamage(50);
+		super_t.beRepaired(20);
+		super_t.ninjaShoebox(ninja);
+		super_t.ninjaShoebox(clap);
+		super_t.vaulthunter_dot_exe("random");
+		super_t.vaulthunter_dot_exe("random2");
 
 
 		NinjaTrap temp = ninja;

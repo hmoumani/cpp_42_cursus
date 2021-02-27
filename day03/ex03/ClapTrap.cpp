@@ -16,8 +16,14 @@ void    ClapTrap::takeDamage(unsigned int amount)
 {
     std::cout << "My assets... frozen!" << std::endl;
     _hit_point -= amount - (amount * _armor_damage / 100);
-    if (_hit_point < 0)
-        _hit_point = 0;
+    if (_hit_point > _max_hit_point)
+    {
+        amount = _hit_point - _max_hit_point;
+        _hit_point = _max_hit_point;
+        _energy_points += amount;
+        if (_energy_points > _max_energy_points)
+            _energy_points = _max_energy_points;
+    }
 }
 
 void    ClapTrap::beRepaired(unsigned int amount)
@@ -61,4 +67,19 @@ ClapTrap::~ClapTrap()
 std::string ClapTrap::getName() const
 {
     return this->_name;
+}
+
+ClapTrap    &ClapTrap::operator=(ClapTrap const & src)
+{
+    _hit_point = src._hit_point;
+    _max_hit_point = src._max_hit_point;
+    _energy_points = src._energy_points;
+    _max_energy_points = src._max_energy_points;
+    _level = src._level;
+    _name = src._name;
+    _melee_damage = src._melee_damage;
+    _ranged_attack_damage = src._ranged_attack_damage;
+    _armor_damage = src._armor_damage;
+    std::cout << "copie from Clap Trap created" << std::endl;
+    return *this;
 }
