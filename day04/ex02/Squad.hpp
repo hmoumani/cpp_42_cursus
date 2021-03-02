@@ -22,7 +22,7 @@ class Squad : public ISquad
         int     getCount() const;
         ISpaceMarine *getUnit(int) const;
         int push(ISpaceMarine *);
-		void    Squad::clear();
+		void    clear();
 };
 
 #endif

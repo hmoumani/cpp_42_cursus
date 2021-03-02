@@ -6,20 +6,24 @@ AssaultTerminator::AssaultTerminator()
     std::cout << "* teleports from space *" << std::endl;
 }
 
-AssaultTerminator::AssaultTerminator(AssaultTerminator const & src)
+AssaultTerminator::AssaultTerminator(AssaultTerminator const &)
 {
-    *this = src;
     std::cout << "* teleports from space *" << std::endl;
 }
 
 AssaultTerminator::~AssaultTerminator()
 {
-    std::cout << "I’ll be back..." << std::endl;
+    std::cout << "I'll be back..." << std::endl;
 }
 
-AssaultTerminator  &AssaultTerminator::operator=(AssaultTerminator const & src)
+AssaultTerminator  &AssaultTerminator::operator=(AssaultTerminator const &)
 {
     return *this;
+}
+
+AssaultTerminator* AssaultTerminator::clone() const
+{
+    return (new AssaultTerminator(*this));
 }
 
 void AssaultTerminator::battleCry() const

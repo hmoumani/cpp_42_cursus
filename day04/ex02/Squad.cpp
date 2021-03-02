@@ -1,6 +1,7 @@
 # include "Squad.hpp"
 
-Squad::Squad()
+Squad::Squad() : _marines(0), _list(NULL)
+
 {
     
 }
@@ -20,14 +21,15 @@ int     Squad::getCount() const
 
 ISpaceMarine *Squad::getUnit(int n) const
 {
+    int i = 0;
     t_space_marine  *elem;
     if (n > this->getCount() || n < 0)
         return NULL;
     elem = this->_list;
-    while (n >= 0 && elem)
+    while (i < n && elem)
     {
         elem = elem->next;
-        n--;
+        i++;
     }
     if (!elem)
         return NULL;
@@ -56,7 +58,7 @@ int         Squad::push(ISpaceMarine *marine)
         elem = elem->next;
     }
     elem->next = new t_space_marine;
-    elem->content = marine;
+    elem->next->content = marine;
     elem->next->next = NULL;
     this->_marines++;
     return this->_marines;

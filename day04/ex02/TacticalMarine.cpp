@@ -16,7 +16,7 @@ TacticalMarine::~TacticalMarine()
     std::cout << "Aaargh..." << std::endl;
 }
 
-TacticalMarine  &TacticalMarine::operator=(TacticalMarine const & src)
+TacticalMarine  &TacticalMarine::operator=(TacticalMarine const &)
 {
     return *this;
 }

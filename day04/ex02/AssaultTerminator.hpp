@@ -6,10 +6,11 @@ class AssaultTerminator : public ISpaceMarine
 {
     public:
         AssaultTerminator();
-        AssaultTerminator(AssaultTerminator const & src);
+        AssaultTerminator(AssaultTerminator const &);
         ~AssaultTerminator();
         AssaultTerminator  &operator=(AssaultTerminator const & src);
         void battleCry() const;
+        AssaultTerminator* clone() const;
         void rangedAttack() const;
         void meleeAttack() const ;
 };
