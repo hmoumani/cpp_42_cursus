@@ -64,6 +64,7 @@ void Character::equip(AMateria* m)
         if (this->_list[i] == NULL)
         {
             this->_list[i] = m;
+            return ;
         }
     }
 }
