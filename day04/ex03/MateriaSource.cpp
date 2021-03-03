@@ -20,7 +20,8 @@ MateriaSource::MateriaSource()
     }
 }
 
-MateriaSource::~MateriaSource() {
+MateriaSource::~MateriaSource()
+{
     for (int i = 0; i < 4; i++) {
         if (_list[i])
             delete _list[i];
@@ -28,20 +29,26 @@ MateriaSource::~MateriaSource() {
 }
 
 MateriaSource::MateriaSource(MateriaSource const & src) {
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++)
+    {
         _list[i] = NULL;
     }
     *this = src;
 }
 
 MateriaSource&      MateriaSource::operator=(MateriaSource const & materiaSource) {
-    for (int i = 0; i < 4; i++) {
-        if (_list[i]) {
+    for (int i = 0; i < 4; i++)
+    {
+        if (_list[i])
+        {
             delete _list[i];
         }
-        if (materiaSource._list[i]) {
+        if (materiaSource._list[i])
+        {
             _list[i] = materiaSource._list[i]->clone();
-        } else {
+        }
+        else
+        {
             _list[i] = NULL;
         }
     }

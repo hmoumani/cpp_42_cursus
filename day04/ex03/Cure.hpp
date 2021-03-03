@@ -19,7 +19,7 @@ class Cure : public AMateria
     public:
         Cure();
         Cure(Cure const &);
-        ~Cure();
+        virtual ~Cure();
         Cure    &operator=(Cure const & src);
         Cure* clone() const;
         void use(ICharacter& target);

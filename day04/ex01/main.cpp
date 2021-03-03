@@ -14,6 +14,8 @@
 #include "RadScorpion.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "M4.hpp"
+#include "Noob.hpp"
 
 int main()
 {
@@ -26,6 +28,23 @@ int main()
         me->equip(pr);
         std::cout << *me;
         me->equip(pf);
+        me->attack(b);
+        std::cout << *me;
+        me->equip(pr);
+        std::cout << *me;
+        me->attack(b);
+        std::cout << *me;
+        me->attack(b);
+        std::cout << *me;
+    }
+    std::cout << "    ******************************************" << std::endl;
+    {
+        Character* me = new Character("me again");
+        std::cout << *me;
+        Enemy* b = new Noob();
+        AWeapon* pr = new M4();
+        me->equip(pr);
+        std::cout << *me;
         me->attack(b);
         std::cout << *me;
         me->equip(pr);

@@ -49,7 +49,7 @@ void Character::equip(AWeapon *wp)
 
 void Character::attack(Enemy *enemy)
 {
-    if (_ap < 10 || _wp == NULL)
+    if (_wp == NULL || enemy == NULL || _ap < _wp->getAPCost())
         return ;
     std::cout << this->_name << " attakcs " << enemy->getType() << " with a " << this->_wp->getName() << std::endl;
     this->_wp->attack();

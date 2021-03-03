@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   M4.cpp                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoumani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 15:15:43 by hmoumani          #+#    #+#             */
-/*   Updated: 2021/03/02 15:15:46 by hmoumani         ###   ########.fr       */
+/*   Created: 2021/03/03 08:52:18 by hmoumani          #+#    #+#             */
+/*   Updated: 2021/03/03 08:52:20 by hmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-# define SUPERMUTANT_HPP
-# include "Enemy.hpp"
+#include "M4.hpp"
 
-class SuperMutant : public Enemy
+M4::M4() : AWeapon("M4", 8, 50)
 {
-    public:
-        SuperMutant();
-        SuperMutant(SuperMutant const & src);
-        virtual ~SuperMutant();
-        SuperMutant		&operator=(SuperMutant const & src);
-        void			takeDamage(int);
-};
+}
 
-#endif
+M4::M4(M4 const & src)
+{
+    *this = src;
+}
+
+M4::~M4()
+{
+}
+
+void            M4::attack() const
+{
+    std::cout << "* TA TA Ta... *" << std::endl;
+}
+
+M4&    M4::operator=(M4 const & weapon) {
+    AWeapon* awp = this;
+    *awp = weapon;
+    return *this;
+}
+
+

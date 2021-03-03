@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   M4.hpp                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoumani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 15:15:43 by hmoumani          #+#    #+#             */
-/*   Updated: 2021/03/02 15:15:46 by hmoumani         ###   ########.fr       */
+/*   Created: 2021/03/03 08:52:23 by hmoumani          #+#    #+#             */
+/*   Updated: 2021/03/03 08:52:25 by hmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-# define SUPERMUTANT_HPP
-# include "Enemy.hpp"
+#ifndef M4_HPP
+# define M4_HPP
+# include "AWeapon.hpp"
 
-class SuperMutant : public Enemy
+class M4 : public AWeapon
 {
     public:
-        SuperMutant();
-        SuperMutant(SuperMutant const & src);
-        virtual ~SuperMutant();
-        SuperMutant		&operator=(SuperMutant const & src);
-        void			takeDamage(int);
+        M4();
+        M4(M4 const & src);
+        virtual ~M4();
+        M4     &operator=(M4 const & src);
+        void            attack() const;
 };
 
 #endif

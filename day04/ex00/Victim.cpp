@@ -12,7 +12,7 @@
 
 #include "Victim.hpp"
 
-Victim::Victim()
+Victim::Victim() : _name("")
 {
     std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
 }

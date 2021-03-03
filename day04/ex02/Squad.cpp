@@ -53,7 +53,7 @@ int         Squad::push(ISpaceMarine *marine)
     t_space_marine *elem;
 
     if (!marine)
-        return -1;
+        return _marines;
     if (!this->_list)
     {
         this->_list = new t_space_marine;
@@ -66,7 +66,7 @@ int         Squad::push(ISpaceMarine *marine)
     while (elem->next)
     {
         if (elem->content == marine)
-            return -1;
+            return _marines;
         elem = elem->next;
     }
     elem->next = new t_space_marine;
@@ -83,8 +83,10 @@ Squad&          Squad::operator=(Squad const & squad) {
     _marines = squad._marines;
     t_space_marine  *iter = squad._list;
     t_space_marine  *tmp = _list;
-    while (iter) {
-        if (iter != squad._list) {
+    while (iter)
+    {
+        if (iter != squad._list)
+        {
             tmp->next = new t_space_marine;
             tmp = tmp->next;
         }
@@ -98,7 +100,8 @@ Squad&          Squad::operator=(Squad const & squad) {
 void    Squad::clear() {
     t_space_marine* nextUnit;
 
-    while (_list != NULL) {
+    while (_list != NULL)
+    {
         nextUnit = _list->next;
         if (_list->content != NULL)
             delete _list->content;

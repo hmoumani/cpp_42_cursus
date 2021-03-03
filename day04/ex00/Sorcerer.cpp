@@ -12,7 +12,7 @@
 
 #include "Sorcerer.hpp"
 
-Sorcerer::Sorcerer()
+Sorcerer::Sorcerer() : _name("None"), _title("")
 {
     std::cout << _name << ", " << _title << ", is born!" << std::endl;
 }

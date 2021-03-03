@@ -63,7 +63,7 @@ void Character::equip(AMateria* m)
     {
         if (this->_list[i] == NULL)
         {
-            this->_list[i] = m;
+            this->_list[i] = m->clone();
             return ;
         }
     }
@@ -86,7 +86,8 @@ void Character::use(int idx, ICharacter& target)
 
 void    Character::clear() {
     for (int i = 0; i < 4; i++) {
-        if (_list[i]) {
+        if (_list[i] != NULL)
+        {
             delete _list[i];
             _list[i] = NULL;
         }

@@ -25,7 +25,7 @@ class Character : public ICharacter
         Character();
         Character(Character const & src);
         Character(std::string const & name);
-        ~Character();
+        virtual ~Character();
         Character   &operator=(Character const & src);
         std::string const & getName() const;
         void equip(AMateria* m);

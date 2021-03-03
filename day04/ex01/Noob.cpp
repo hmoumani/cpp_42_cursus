@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Noob.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoumani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 15:20:32 by hmoumani          #+#    #+#             */
-/*   Updated: 2021/03/02 15:20:34 by hmoumani         ###   ########.fr       */
+/*   Created: 2021/03/03 08:52:32 by hmoumani          #+#    #+#             */
+/*   Updated: 2021/03/03 08:52:35 by hmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "Noob.hpp"
 
-Cure::Cure() : AMateria("cure")
+Noob::Noob() : Enemy(100, "Noob")
 {
+    std::cout << "let's Rool" << std::endl;
 }
 
-Cure::Cure(Cure const &src) : AMateria("cure")
+Noob::Noob(Noob const & src)
 {
     *this = src;
+    std::cout << "let's Rool" << std::endl;
 }
 
-Cure::~Cure()
+Noob::~Noob()
 {
+    std::cout << "RIP" << std::endl;
 }
 
-Cure    &Cure::operator=(Cure const & src)
+void        Noob::takeDamage(int damage)
 {
-    AMateria::operator=(src);
+    Enemy::takeDamage(damage - 10);
+}
+
+Noob&    Noob::operator=(Noob const & super) {
+    Enemy* enemy = this;
+    *enemy = super;
     return *this;
-}
-
-Cure* Cure::clone() const
-{
-    return (new Cure(*this));
-}
-
-void Cure::use(ICharacter& target)
-{
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-    AMateria::use(target);
 }

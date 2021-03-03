@@ -14,6 +14,7 @@
 # define ASSAULTTERMINATOR_HPP
 # include "ISpaceMarine.hpp"
 # include <iostream>
+
 class AssaultTerminator : public ISpaceMarine
 {
     public:

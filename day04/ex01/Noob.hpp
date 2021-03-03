@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   Noob.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoumani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 15:15:43 by hmoumani          #+#    #+#             */
-/*   Updated: 2021/03/02 15:15:46 by hmoumani         ###   ########.fr       */
+/*   Created: 2021/03/03 08:52:40 by hmoumani          #+#    #+#             */
+/*   Updated: 2021/03/03 08:52:42 by hmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-# define SUPERMUTANT_HPP
+#ifndef NOOB_HPP
+# define NOOB_HPP
 # include "Enemy.hpp"
 
-class SuperMutant : public Enemy
+class Noob : public Enemy
 {
     public:
-        SuperMutant();
-        SuperMutant(SuperMutant const & src);
-        virtual ~SuperMutant();
-        SuperMutant		&operator=(SuperMutant const & src);
+        Noob();
+        Noob(Noob const & src);
+        virtual ~Noob();
+        Noob		&operator=(Noob const & src);
         void			takeDamage(int);
 };
 

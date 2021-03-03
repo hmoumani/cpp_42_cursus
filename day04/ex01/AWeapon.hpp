@@ -20,8 +20,8 @@ class AWeapon
 		int			_apcost;
         int			_damage;
     public:
-    	AWeapon(std::string const & name, int apcost, int damage);
         AWeapon();
+    	AWeapon(std::string const & name, int apcost, int damage);
 		AWeapon(AWeapon const & src);
         virtual ~AWeapon();
         std::string const & getName() const;
