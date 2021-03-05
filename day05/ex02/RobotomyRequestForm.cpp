@@ -12,7 +12,6 @@
 
 #include "RobotomyRequestForm.hpp"
 
-
 RobotomyRequestForm::RobotomyRequestForm()
 {
     srand(time(NULL));
@@ -45,4 +44,5 @@ void                    RobotomyRequestForm::execute(Bureaucrat const & src) con
     if (rand() % 2)
         std::cout << _target << "  has been robotomized successfully " << std::endl;
     else
-        std::cout << "mission failed" << std::endl;}
+        std::cout << "mission failed" << std::endl;
+}

@@ -21,8 +21,8 @@ class ShrubberyCreationForm : public Form
     private:
         ShrubberyCreationForm();
         std::string     _target;
-    public:
         ShrubberyCreationForm(ShrubberyCreationForm const & src);
+    public:
         ShrubberyCreationForm(std::string const & src);
         ~ShrubberyCreationForm();
         ShrubberyCreationForm   &operator=(ShrubberyCreationForm const & src);

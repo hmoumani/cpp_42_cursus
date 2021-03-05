@@ -20,8 +20,8 @@ class PresidentialPardonForm : public Form
     private:
         std::string _target;
         PresidentialPardonForm();
-    public:
         PresidentialPardonForm(PresidentialPardonForm const & src);
+    public:
         PresidentialPardonForm(std::string const & target);
         ~PresidentialPardonForm();
         PresidentialPardonForm     &operator=(PresidentialPardonForm const & src);
