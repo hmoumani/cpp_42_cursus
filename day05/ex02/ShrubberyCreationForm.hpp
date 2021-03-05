@@ -26,7 +26,7 @@ class ShrubberyCreationForm : public Form
         ShrubberyCreationForm(std::string const & src);
         ~ShrubberyCreationForm();
         ShrubberyCreationForm   &operator=(ShrubberyCreationForm const & src);
-        void                    execute(Bureaucrat & src);
+        void                    execute(Bureaucrat const & src) const;
 };
 
 #endif

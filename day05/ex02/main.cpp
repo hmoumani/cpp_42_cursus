@@ -12,58 +12,57 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-    std::cout << "creating Form with low grade" << std::endl << std::endl;
-    try
-    {
-        Form form("default", 180, 160);
-    }
-    catch(std::exception &e)
-    {
-        std::cout << "\t" << e.what() << std::endl;
-    }
 
-    std::cout << "creating Form with high grade" << std::endl << std::endl;
-    try
-    {
-        Form form("default", 0, 0);
-    }
-    catch(std::exception &e)
-    {
-        std::cout << "\t" << e.what() << std::endl;
-    }
+    ShrubberyCreationForm f1("Home");
+    RobotomyRequestForm f2("Home");
+    PresidentialPardonForm f3("Home");
 
-    std::cout << "creating Form with safe grade" << std::endl << std::endl;
-    try
-    {
-        Form form("default", 20, 70);
-        std::cout << "\tdone" << std::endl;
-    }
-    catch(std::exception &e)
-    {
-        std::cout << "\t" << e.what() << std::endl;
-    }
-    std::cout << "*********************" << std::endl;
-    {
-        Form form("default", 20, 70);
-        Bureaucrat bur("bureaucrat", 80);
+    // ShrubberyCreationForm
 
-        std::cout << form << std::endl;
-        std::cout << "signing Form with not enough grade : " << std::endl << std::endl;
-        bur.signForm(form);
-        std::cout << form << std::endl;
-    }
-    std::cout << "*********************" << std::endl;
-    {
-        Form form("default", 20, 70);
-        Bureaucrat bur("bureaucrat", 10);
-        std::cout << form << std::endl;
-        std::cout << "signing Form with enough grade :" << std::endl << std::endl;
-        bur.signForm(form);
-        std::cout << form << std::endl;
-    }
+    Bureaucrat b1("b1", 150);
+    b1.signForm(f1); // X
+    b1.executeForm(f1); // X
+    
+    Bureaucrat b2("b2", 140);
+    b2.signForm(f1); // O
+    b2.executeForm(f1); // X
+    
+    Bureaucrat b3("b3", 130);
+    b3.signForm(f1); // X
+    b3.executeForm(f1); // O
+
+    // RobotomyRequestForm
+    
+    b3.signForm(f2); // X
+    b3.executeForm(f2); // X
+    
+    Bureaucrat b4("b4", 70);
+    b4.signForm(f2); // O
+    b4.executeForm(f2); // X
+    
+    Bureaucrat b5("b5", 40);
+    b5.signForm(f2); // O
+    b5.executeForm(f2); // O
+
+    // PresidentialPardonForm
+
+    b5.signForm(f3); // X
+    b5.executeForm(f3); // X
+    
+    Bureaucrat b6("b6", 20);
+    b6.signForm(f3); // O
+    b6.executeForm(f3); // X
+    
+    Bureaucrat b7("b7", 5);
+    b7.signForm(f3); // O
+    b7.executeForm(f3); // O
+    
 
 
 

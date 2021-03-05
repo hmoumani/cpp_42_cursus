@@ -19,7 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) 
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target) : Form("", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target) : Form("shrubbery creation", 145, 137), _target(target)
 {
 }
 
@@ -33,7 +33,7 @@ ShrubberyCreationForm   &ShrubberyCreationForm::operator=(ShrubberyCreationForm 
     return *this;
 }
 
-void                    ShrubberyCreationForm::execute(Bureaucrat & src)
+void                    ShrubberyCreationForm::execute(Bureaucrat const & src) const
 {
     Form::execute(src);
     std::ofstream out(this->_target + "_Shrubbery");

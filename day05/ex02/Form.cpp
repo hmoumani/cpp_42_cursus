@@ -48,6 +48,16 @@ const char* Form::GradeTooLowException::what() const throw()
     return "grade is too low!";
 }
 
+const char* Form::FormIsSigned::what() const throw()
+{
+    return "Form is already signed!";
+}
+
+const char* Form::FormIsNotSigned::what() const throw()
+{
+    return "Form is Not signed!";
+}
+
 std::string Form::getName() const
 {
     return _name;
@@ -77,6 +87,15 @@ void        Form::beSigned(Bureaucrat & src)
 {
     if (src.getGrade() > this->_grade_to_sign)
         throw Form::GradeTooLowException();
+    if (this->_is_signed)
+        throw Form::FormIsSigned();
     this->_is_signed = true;
 }
 
+void        Form::execute(Bureaucrat const & src) const
+{
+    if (not is_signed())
+        throw FormIsNotSigned();
+    else if (this->getGradeToExec() < src.getGrade())
+        throw GradeTooLowException();
+}

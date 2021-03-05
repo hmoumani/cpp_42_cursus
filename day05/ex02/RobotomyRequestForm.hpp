@@ -20,13 +20,13 @@ class RobotomyRequestForm : public Form
 {
     private:
         std::string _target;
-    public:
         RobotomyRequestForm();
+    public:
         RobotomyRequestForm(RobotomyRequestForm const & src);
         RobotomyRequestForm(std::string const & target);
         ~RobotomyRequestForm();
         RobotomyRequestForm     &operator=(RobotomyRequestForm const & src);
-        void                    execute(Bureaucrat & src);
+        void                    execute(Bureaucrat const & src) const;
 };
 
 #endif

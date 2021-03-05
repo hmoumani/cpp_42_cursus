@@ -10,4 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
+# include "Form.hpp"
+# include "Bureaucrat.hpp"
 
+class PresidentialPardonForm : public Form
+{
+    private:
+        std::string _target;
+        PresidentialPardonForm();
+    public:
+        PresidentialPardonForm(PresidentialPardonForm const & src);
+        PresidentialPardonForm(std::string const & target);
+        ~PresidentialPardonForm();
+        PresidentialPardonForm     &operator=(PresidentialPardonForm const & src);
+        void                    execute(Bureaucrat const & src) const;
+};
+
+#endif

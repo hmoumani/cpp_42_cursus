@@ -23,7 +23,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : Form
     srand(time(NULL));
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const & target) : Form("", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string const & target) : Form("Robotomy Request", 72, 45), _target(target)
 {
     srand(time(NULL));
 }
@@ -38,7 +38,7 @@ RobotomyRequestForm   &RobotomyRequestForm::operator=(RobotomyRequestForm const 
     return *this;
 }
 
-void                    RobotomyRequestForm::execute(Bureaucrat & src)
+void                    RobotomyRequestForm::execute(Bureaucrat const & src) const
 {
     Form::execute(src);
     std::cout << "Vvvvvvvvvv...Vvvvvv..." << std::endl;
