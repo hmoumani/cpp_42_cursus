@@ -51,22 +51,22 @@ int main()
         me->use(0, *bob);
         me->use(1, *bob);
         /*---------- My tests ----------*/
-        Character *mbani = new Character("mbani");
-        Character *mamoussa = new Character("mamoussa");
-        mbani->equip(tmp); // cure at index 0
+        Character *hmoumani = new Character("hmoumani");
+        Character *test = new Character("test");
+        hmoumani->equip(tmp); // cure at index 0
         tmp = src->createMateria("ice");
-        mbani->equip(tmp); // ice at index 1
+        hmoumani->equip(tmp); // ice at index 1
         tmp = src->createMateria("ice");
-        mbani->equip(tmp); // ice at index 2
-        mbani->use(0, *me);
-        mbani->use(1, *bob);
-        mbani->use(2, *mbani);
-        *mamoussa = *mbani;
-        mamoussa->use(0, *me);
-        mamoussa->use(1, *bob);
-        mamoussa->use(2, *mbani);   
-        delete mbani;
-        delete mamoussa;
+        hmoumani->equip(tmp); // ice at index 2
+        hmoumani->use(0, *me);
+        hmoumani->use(1, *bob);
+        hmoumani->use(2, *hmoumani);
+        *test = *hmoumani;
+        test->use(0, *me);
+        test->use(1, *bob);
+        test->use(2, *hmoumani);   
+        delete hmoumani;
+        delete test;
         /*---------- End ----------*/
         me->use(1, *bob);
         delete bob;
