@@ -44,7 +44,10 @@ void    to_float_and_double(char *in)
     long double result;
     try 
     {
-        result = std::stold(in);
+        if (in[1] == 0 && !isnumber(static_cast<int>(*in)))
+            result = static_cast<long double>(*in);
+        else
+            result = std::stold(in);
         if ((result) != (result))
             std::cout << "float: nanf" << std::endl;
         else if (result < std::numeric_limits<float>::lowest() && result != 0)

@@ -16,7 +16,8 @@
 int main(void) {
 
     srand(time(NULL));
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         void *vd = serialize();
         Data *data = deserialize(vd);
         std::cout << "str1: " << data->str1 << std::endl;
@@ -25,7 +26,5 @@ int main(void) {
         std::cout << "*********************" << std::endl;
         delete data;
     }
-
-
     return (0);
 }
