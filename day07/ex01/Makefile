@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC=iter.cpp main.cpp
+SRC=main.cpp
 
 ARGS=-Wall -Wextra -Werror
 

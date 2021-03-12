@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoumani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 12:53:24 by hmoumani          #+#    #+#             */
-/*   Updated: 2021/03/12 12:53:25 by hmoumani         ###   ########.fr       */
+/*   Created: 2021/03/12 12:53:16 by hmoumani          #+#    #+#             */
+/*   Updated: 2021/03/12 12:53:18 by hmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
-
+#ifndef ITER_HPP
+# define ITER_HPP
+# include <iostream>
+# include <string>
 
 template <typename T>
-void    print(T const & n)
+void    iter(T *list, int len, void (*f)(T const &))
 {
-    std::cout << n << std::endl;
+    for (int i = 0;i < len; i++)
+    {
+        f(list[i]);
+    }
 }
 
-
-int main()
-{
-    int arr[5] = {1,2,3,4,5};
-
-    iter(arr, 5, print);
-
-    std::cout << "***********************************" <<std::endl;
-
-    float arr1[5] = {1.5,2.5,3,4.5,5.5};
-
-    iter(arr1, 5, print);
-
-    std::cout << "***********************************" <<std::endl;
-
-
-
-}
+#endif
