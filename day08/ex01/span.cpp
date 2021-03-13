@@ -73,15 +73,14 @@ int                             Span::shortestSpan()
     if (_vec.size() <= 1)
         throw std::exception();
     int min = INT_MAX;
-    for (std::vector<int>::iterator it = _vec.begin(), last = _vec.end(); it != last; it++)
+    std::vector<int> cp(_vec);
+    std::sort(cp.begin(), cp.end());
+    std::vector<int>::iterator prev = cp.begin();
+    for (std::vector<int>::iterator it = cp.begin() + 1, last = cp.end(); it != last; it++)
     {
-        for (std::vector<int>::iterator in_it = _vec.begin(); in_it != last; in_it++)
-        {
-            if (it == in_it)
-                continue ;
-            if (std::abs(*it - *in_it) < min)
-                min = std::abs(*it - *in_it);
-        }
+        if (std::abs(*it - *prev) < min)
+            min = std::abs(*it - *prev);
+        prev = it;
     }
     return min;
 }

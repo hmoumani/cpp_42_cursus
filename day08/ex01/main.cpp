@@ -28,9 +28,9 @@ int main()
     std::cout << "************************" << std::endl;
     {
         std::srand(unsigned(std::time(nullptr)));
-        std::vector<int> v(10000);
+        std::vector<int> v(110000);
         std::generate(v.begin(), v.end(), std::rand);
-        Span sp = Span(10000);
+        Span sp = Span(110000);
         sp.addNumber(v.begin(), v.end());
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
