@@ -36,7 +36,6 @@ void    to_char_and_int(char *in)
     }
     std::cout << "char: impossible" << std::endl;
     std::cout << "int: impossible" << std::endl;
-
 }
 
 void    to_float_and_double(char *in)
@@ -104,4 +103,5 @@ int main(int argc, char **argv)
     if (argc != 2)
         return (ft_error("Error: Usage ./convert ARG"));
     redirect(argv[1]);
+    return (0);
 }

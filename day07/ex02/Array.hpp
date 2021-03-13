@@ -29,6 +29,10 @@ class Array
         Array<T>(unsigned int n) : _size(n)
         {
             this->_list = new T[n];
+            for (unsigned int i = 0; i < n; i++)
+            {
+                _list[i] = 0;
+            }
         };
         Array<T>(const Array<T> &src) : _list(NULL)
         {

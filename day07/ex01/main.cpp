@@ -12,13 +12,11 @@
 
 #include "iter.hpp"
 
-
 template <typename T>
 void    print(T const & n)
 {
     std::cout << n << std::endl;
 }
-
 
 int main()
 {
@@ -33,7 +31,4 @@ int main()
     iter(arr1, 5, print);
 
     std::cout << "***********************************" <<std::endl;
-
-
-
 }

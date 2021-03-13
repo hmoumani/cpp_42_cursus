@@ -39,8 +39,8 @@ int main()
     {
         Span sp = Span(10000);
         sp.addNumber(50);
-        sp.addNumber(0);
         sp.addNumber(49);
+        sp.addNumber(20);
         sp.addNumber(30);
         sp.addNumber(10);
         std::cout << sp.shortestSpan() << std::endl;
