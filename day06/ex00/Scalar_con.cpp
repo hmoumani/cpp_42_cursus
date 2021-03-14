@@ -20,14 +20,14 @@ void    to_char_and_int(char *in)
     {
         if (isprint(static_cast<int>(*in)) && in[1] == 0 && !isnumber(*in))
         {
-            std::cout << "char: " << *in << std::endl;
-            std::cout << "int: " << static_cast<int>(*in) << std::endl;
+            std::cout << "char: '" << *in << "'" << std::endl;
+            std::cout << "int: " << static_cast< int>(*in) << std::endl;
             return ;
         }
         else
         {
             if (isprint(static_cast<int>(result)))
-                std::cout << "char: " << static_cast<char>(result) << std::endl;
+                std::cout << "char: '" << static_cast<char>(result) << "'" << std::endl;
             else
                 std::cout << "char: : Non displayable" << std::endl;
             std::cout << "int: " << (result) << std::endl;
@@ -67,7 +67,10 @@ void    to_float_and_double(char *in)
     }
     try
     {
-        result = std::stold(in);
+        if (in[1] == 0 && !isnumber(static_cast<int>(*in)))
+            result = static_cast<long double>(*in);
+        else
+            result = std::stold(in);
         if (result > std::numeric_limits<double>::max())
             std::cout << "double: +inf" << std::endl;
         else if ((result) < std::numeric_limits<double>::lowest())
@@ -82,7 +85,7 @@ void    to_float_and_double(char *in)
     }
     catch(const std::exception& e)
     {
-        std::cout << "double: nanf" << std::endl;
+        std::cout << "double: nan" << std::endl;
     }
 }
 
