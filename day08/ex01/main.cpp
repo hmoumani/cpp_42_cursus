@@ -57,4 +57,14 @@ int main()
         std::cout << sp.longestSpan() << std::endl;
     }
     std::cout << "************************" << std::endl;
+    {
+        Span sp = Span(10);
+        std::vector<int> vec;
+        for (int i = 1; i < 3; i++)
+            vec.push_back(i * 10);
+        sp.addNumber(vec.begin(), vec.end());
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
+    }
+    std::cout << "************************" << std::endl;
 }

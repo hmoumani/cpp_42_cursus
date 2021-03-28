@@ -45,8 +45,4 @@ public:
     const_reverse_iterator rend() const {return this->c.rend();};
 };
 
-
-
-
-
 #endif
